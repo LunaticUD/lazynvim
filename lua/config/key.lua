@@ -73,4 +73,14 @@ vim.keymap.set("n", "<space>fb", ":Telescope file_browser path=%:p:h select_buff
 vim.keymap.set("n", "<space>fb", function()
 	require("telescope").extensions.file_browser.file_browser()
 end)
--- comments
+-- 可视模式下使用 Tab/Shift-Tab 缩进
+vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
+vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
+
+-- 正常模式下缩进当前行
+vim.keymap.set("n", "<Tab>", ">>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-Tab>", "<<", { noremap = true, silent = true })
+
+-- 插入模式下使用 Ctrl+Tab 缩进当前行
+vim.keymap.set("i", "<C-Tab>", "<C-t>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-S-Tab>", "<C-d>", { noremap = true, silent = true })
