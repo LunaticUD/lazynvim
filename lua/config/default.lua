@@ -54,3 +54,5 @@ vim.opt.sidescrolloff = 8
 vim.opt.cmdheight = 1
 -- 设置超时时间
 vim.opt.timeoutlen = 500
+-- 字体
+vim.opt.guifont = "Maple Mono NF CN:h12, ComicShannsMono Nerd Font:h12"
