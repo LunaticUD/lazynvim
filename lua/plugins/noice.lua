@@ -1,31 +1,94 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
+
 	opts = {
 		background_colour = "#000000",
+
+		-- ===========================
+		-- Cmdline UI（你的原本配置）
+		-- ===========================
 		cmdline = {
-			enabled = true, -- 启用 Noice cmdline UI
-			view = "cmdline_popup", -- 使用 popup 显示命令行，而不是经典的底部命令行
-			opts = {}, -- cmdline UI 的全局选项
+			enabled = true,
+			view = "cmdline_popup",
+			opts = {},
 			format = {
-				cmdline = { pattern = "^:", icon = "", lang = "vim" }, -- 用于普通命令行模式的格式
-				search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" }, -- 向下搜索
-				search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" }, -- 向上搜索
-				filter = { pattern = "^:%s*!", icon = "$", lang = "bash" }, -- 过滤器命令
-				lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" }, -- Lua 输入
-				help = { pattern = "^:%s*he?l?p?%s+", icon = "" }, -- help 输入
-				input = { view = "cmdline_input", icon = "󰥻 " }, -- 用于输入函数的格式
+				cmdline = { pattern = "^:", icon = "", lang = "vim" },
+				search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
+				search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
+				filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
+				lua = {
+					pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" },
+					icon = "",
+					lang = "lua",
+				},
+				help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
+				input = { view = "cmdline_input", icon = "󰥻 " },
 			},
 		},
 
-		-- 将 `views` 配置添加到 opts 中
+		-- ===========================
+		-- 视图设置（你的原本 + presets）
+		-- ===========================
 		views = {
 			cmdline_popup = {
-				position = { row = 1, col = math.floor(vim.fn.winwidth(0) / 2) - 40 }, -- 设置弹出窗口的位置为顶部居中
-				size = { width = 80, height = "auto" }, -- 可以设置弹出窗口的大小，根据需要调整
+				position = { row = 1, col = math.floor(vim.fn.winwidth(0) / 2) - 40 },
+				size = { width = 80, height = "auto" },
+			},
+		},
+
+		-- ===========================
+		-- LSP 文档增强
+		-- ===========================
+		lsp = {
+			override = {
+				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+				["vim.lsp.util.stylize_markdown"] = true,
+				["cmp.entry.get_documentation"] = true,
+			},
+		},
+
+		-- ===========================
+		-- Noice 预置 UI（非常实用）
+		-- ===========================
+		presets = {
+			bottom_search = true,
+			command_palette = true,
+			long_message_to_split = true,
+			inc_rename = true,
+			lsp_doc_border = true,
+		},
+
+		-- ===========================
+		-- 路由过滤（移除讨厌的提示）
+		-- ===========================
+		routes = {
+			{
+				filter = {
+					event = "notify",
+					find = "No information available",
+				},
+				opts = { skip = true },
 			},
 		},
 	},
+
+	config = function(_, opts)
+		require("noice").setup(opts)
+
+		-- popup 文档滚动增强
+		vim.keymap.set({ "n", "i", "s" }, "<c-f>", function()
+			if not require("noice.lsp").scroll(4) then
+				return "<c-f>"
+			end
+		end, { silent = true, expr = true })
+
+		vim.keymap.set({ "n", "i", "s" }, "<c-b>", function()
+			if not require("noice.lsp").scroll(-4) then
+				return "<c-b>"
+			end
+		end, { silent = true, expr = true })
+	end,
 
 	dependencies = {
 		"MunifTanjim/nui.nvim",
