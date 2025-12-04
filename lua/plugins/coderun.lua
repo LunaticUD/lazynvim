@@ -8,7 +8,7 @@ return {
 	},
 	opts = {
 		-- mode: Mode in which you want to run. Are supported: "better_term", "float", "tab", "toggleterm" (type: bool)
-		mode = "term",
+		mode = "toggleterm",
 		-- Focus on runner window(only works on toggle, term and tab mode)
 		focus = false,
 		-- startinsert (see ':h inserting-ex')
@@ -20,15 +20,8 @@ return {
 			size = 15,
 		},
 		filetype = {
-			c = "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
-			go = "cd $dir && go run $fileName",
-			python = "python -u",
-			javascript = "node",
-			java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
-			cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
-			sh = "bash",
-			rust = "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+			python = "python -u $fileName",
 		},
 	},
-	ft = { "lua", "python", "c", "cpp", "go", "rust" },
+	ft = { "lua", "python" },
 }

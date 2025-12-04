@@ -62,10 +62,6 @@ vim.keymap.set("n", "<leader>sc", ":set spell!<CR>", { noremap = true })
 -- 可视模式下的复制粘贴
 vim.keymap.set("v", "<C-c>", '"+y', { noremap = true })
 vim.keymap.set("v", "<C-v>", '"+p', { noremap = true })
--- RunCode
-vim.keymap.set("n", "<leader>rr", ":RunCode<CR>", { noremap = true, silent = false })
-vim.keymap.set("n", "<leader>rf", ":RunFile<CR>", { noremap = true, silent = false })
-vim.keymap.set("n", "<leader>rc", ":RunClose<CR>", { noremap = true, silent = false })
 -- t=Telescope
 vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>")
 
@@ -87,3 +83,5 @@ vim.keymap.set("n", "<S-Tab>", "<<", { noremap = true, silent = true })
 -- 插入模式下使用 Ctrl+Tab 缩进当前行
 vim.keymap.set("i", "<C-Tab>", "<C-t>", { noremap = true, silent = true })
 vim.keymap.set("i", "<C-S-Tab>", "<C-d>", { noremap = true, silent = true })
+-- 退出浮动终端
+-- vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", { noremap = true, silent = true })
