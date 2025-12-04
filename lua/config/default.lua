@@ -32,7 +32,6 @@ vim.opt.swapfile = false
 -- 显示行号
 vim.opt.number = true
 -- vim.opt.relativenumber = true
-
 -- 启用真彩色支持
 vim.opt.termguicolors = true
 -- 更好的搜索体验
@@ -41,7 +40,7 @@ vim.opt.smartcase = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 -- 自动读取外部更改
--- vim.opt.autoread = true
+vim.opt.autoread = true
 -- 设置剪贴板使用系统剪贴板
 vim.opt.clipboard = "unnamedplus"
 -- 更好的窗口管理
