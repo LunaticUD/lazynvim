@@ -8,7 +8,7 @@ return {
 	},
 	opts = {
 		-- mode: Mode in which you want to run. Are supported: "better_term", "float", "tab", "toggleterm" (type: bool)
-		mode = "toggleterm",
+		mode = "term",
 		-- Focus on runner window(only works on toggle, term and tab mode)
 		focus = false,
 		-- startinsert (see ':h inserting-ex')
@@ -20,7 +20,12 @@ return {
 			size = 15,
 		},
 		filetype = {
-			python = "python -u $fileName",
+			python = "python -u",
+			-- python = function()
+			-- 	local file = vim.fn.expand("%:p")
+			-- 	local msys_file = vim.fn.system('cygpath -u "' .. file .. '" 2>/dev/null'):gsub("\n$", "")
+			-- 	return '~/.config/nvim/python.sh"' .. msys_file .. '" $end'
+			-- end,
 		},
 	},
 	ft = { "lua", "python" },

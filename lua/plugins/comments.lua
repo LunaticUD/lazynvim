@@ -1,6 +1,11 @@
 return {
 	"numToStr/Comment.nvim",
 	opts = {
-		-- add any options here
+		toggler = {
+			line = "<C-_>", -- Ctrl + /
+		},
+		opleader = {
+			line = "<C-_>", -- 可视模式 Ctrl + /
+		},
 	},
 }

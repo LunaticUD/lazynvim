@@ -57,3 +57,9 @@ vim.opt.timeoutlen = 500
 vim.opt.guifont = "Maple Mono NF CN:h12, ComicShannsMono Nerd Font:h12"
 -- bar
 vim.o.showtabline = 2
+-- 设置 shell 选项
+-- vim.opt.shell = "E:/Tools/MSYS2/usr/bin/zsh.exe"
+-- vim.opt.shell = "c:/Windows/System32/WindowsPowerShell/v1.0//powershell"
+-- vim.opt.shellcmdflag = "-l -c"
+-- vim.opt.shellquote = '"'
+-- vim.opt.shellxquote = '"'
