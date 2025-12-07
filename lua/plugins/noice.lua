@@ -4,7 +4,7 @@ return {
 		event = "VeryLazy",
 
 		opts = {
-			background_colour = "#000000",
+			background_colour = "#FFFFFF",
 
 			-- ===========================
 			-- Cmdline UI（你的原本配置）
@@ -106,11 +106,5 @@ return {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
 		},
-	},
-	{
-		"norcalli/nvim-colorizer.lua",
-		config = function(_, _)
-			require("colorizer").setup()
-		end,
 	},
 }
