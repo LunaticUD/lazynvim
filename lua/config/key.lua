@@ -1,6 +1,3 @@
--- mapleader 键为空格
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 -- 撤销
 vim.keymap.set("n", "<c-z>", ":u<CR>", { noremap = true }) -- 避免使用此映射**
 vim.keymap.set("i", "<c-z>", "<c-o>:u<CR>", { noremap = true })

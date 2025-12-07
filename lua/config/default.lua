@@ -33,7 +33,7 @@ vim.opt.swapfile = false
 vim.opt.number = true
 -- vim.opt.relativenumber = true
 -- 启用真彩色支持
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 -- 更好的搜索体验
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
