@@ -13,12 +13,4 @@ vim.opt.rtp:prepend(lazypath)
 -- ===========================
 -- Lazy.nvim Setup 配置
 -- ===========================
-require("lazy").setup({
-	spec = {
-		{ import = "plugins" },
-	},
-	change_detection = {
-		enabled = true,
-		notify = false, -- 🚫 禁掉 “Config Change Detected”
-	},
-})
+
