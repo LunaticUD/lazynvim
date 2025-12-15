@@ -1,6 +1,6 @@
 return {
 	"mason-org/mason-lspconfig.nvim",
-	opts = { ensure_installed = { "basedpyright", "ruff" } },
+	opts = { ensure_installed = { "basedpyright" } },
 	dependencies = {
 		{ "mason-org/mason.nvim", opts = {} },
 		"neovim/nvim-lspconfig",
