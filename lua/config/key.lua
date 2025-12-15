@@ -1,45 +1,46 @@
+-- -- 移动一个单位
+-- vim.keymap.set("n", "w", "k", { noremap = true })
+-- vim.keymap.set("n", "s", "j", { noremap = true })
+-- vim.keymap.set("n", "a", "h", { noremap = true })
+-- vim.keymap.set("n", "d", "l", { noremap = true })
+-- -- 移动五个单位
+-- vim.keymap.set("n", "W", "5k", { noremap = true })
+-- vim.keymap.set("n", "S", "5j", { noremap = true })
+-- vim.keymap.set("n", "A", "5h", { noremap = true })
+-- vim.keymap.set("n", "D", "5l", { noremap = true })
+-- -- 进入编辑模式
+-- -- 在前
+-- vim.keymap.set("n", "e", "i", { noremap = true })
+-- -- 在后
+-- vim.keymap.set("n", "r", "a", { noremap = true })
+-- -- 在首
+-- vim.keymap.set("n", "E", "I", { noremap = true })
+-- -- 在尾
+-- vim.keymap.set("n", "R", "A", { noremap = true })
+-- -- 前进
+-- vim.keymap.set("n", "h", "w", { noremap = true })
+-- -- 删除这一行
+-- vim.keymap.set("n", "c", "d", { noremap = true })
+-- -- 剪切
+-- vim.keymap.set("n", "j", "c", { noremap = true })
+-- -- 替换
+-- vim.keymap.set("n", "m", "r", { noremap = true })
+-- -- 退出编辑模式
+-- vim.keymap.set("i", "jj", "<esc>", { noremap = true })
+-- -- 写入退出
+-- vim.keymap.set("n", "Q", ":wq<CR>", { noremap = true })
+-- -- 退出全部
+-- vim.keymap.set("n", "<A-q>", ":qa<CR>", { noremap = true })
+-----------------------------------------------------------------------
+-- 进入命令行
+vim.keymap.set("n", ";", ":", { noremap = true })
 -- 撤销
 vim.keymap.set("n", "<c-z>", ":u<CR>", { noremap = true }) -- 避免使用此映射**
 vim.keymap.set("i", "<c-z>", "<c-o>:u<CR>", { noremap = true })
--- 移动一个单位
-vim.keymap.set("n", "w", "k", { noremap = true })
-vim.keymap.set("n", "s", "j", { noremap = true })
-vim.keymap.set("n", "a", "h", { noremap = true })
-vim.keymap.set("n", "d", "l", { noremap = true })
--- 移动五个单位
-vim.keymap.set("n", "W", "5k", { noremap = true })
-vim.keymap.set("n", "S", "5j", { noremap = true })
-vim.keymap.set("n", "A", "5h", { noremap = true })
-vim.keymap.set("n", "D", "5l", { noremap = true })
--- 进入编辑模式
--- 在前
-vim.keymap.set("n", "e", "i", { noremap = true })
--- 在后
-vim.keymap.set("n", "r", "a", { noremap = true })
--- 在首
-vim.keymap.set("n", "E", "I", { noremap = true })
--- 在尾
-vim.keymap.set("n", "R", "A", { noremap = true })
--- 前进
-vim.keymap.set("n", "h", "w", { noremap = true })
--- 删除这一行
-vim.keymap.set("n", "c", "d", { noremap = true })
--- 剪切
-vim.keymap.set("n", "j", "c", { noremap = true })
--- 替换
-vim.keymap.set("n", "m", "r", { noremap = true })
--- 进入命令行
-vim.keymap.set("n", ";", ":", { noremap = true })
--- 退出编辑模式
-vim.keymap.set("i", "jj", "<esc>", { noremap = true })
 -- 保存
 vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true })
 -- 退出
 vim.keymap.set("n", "<C-q>", ":q<CR>", { noremap = true })
--- 写入退出
-vim.keymap.set("n", "Q", ":wq<CR>", { noremap = true })
--- 退出全部
-vim.keymap.set("n", "<A-q>", ":qa<CR>", { noremap = true })
 -- 垂直分屏
 vim.keymap.set("n", "<leader>+", ":vsplit<CR>", { noremap = true })
 -- 水平分屏
@@ -61,24 +62,12 @@ vim.keymap.set("v", "<C-c>", '"+y', { noremap = true })
 vim.keymap.set("v", "<C-v>", '"+p', { noremap = true })
 -- t=Telescope
 vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>")
-
--- open file_browser with the path of the current buffer
-vim.keymap.set("n", "<space>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
-
--- Alternatively, using lua API
-vim.keymap.set("n", "<space>fb", function()
-	require("telescope").extensions.file_browser.file_browser()
-end)
 -- 可视模式下使用 Tab/Shift-Tab 缩进
 vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })
-
 -- 正常模式下缩进当前行
 vim.keymap.set("n", "<Tab>", ">>", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Tab>", "<<", { noremap = true, silent = true })
-
 -- 插入模式下使用 Ctrl+Tab 缩进当前行
 vim.keymap.set("i", "<C-Tab>", "<C-t>", { noremap = true, silent = true })
 vim.keymap.set("i", "<C-S-Tab>", "<C-d>", { noremap = true, silent = true })
--- 退出浮动终端
--- vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", { noremap = true, silent = true })
