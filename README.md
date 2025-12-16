@@ -1,6 +1,6 @@
 # python 代码补全
 
-* blink.nvim + mason-lspconfig.nvim 
+* blink.nvim + mason-lspconfig.nvim
 
 # 代码运行
 
@@ -8,4 +8,5 @@
 
 # render-markdown预览
 
-* 
+* render-markdown + markdown-plus
+
