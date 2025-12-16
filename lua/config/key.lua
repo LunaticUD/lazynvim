@@ -61,7 +61,7 @@ vim.keymap.set("n", "<leader>sc", ":set spell!<CR>", { noremap = true })
 vim.keymap.set("v", "<C-c>", '"+y', { noremap = true })
 vim.keymap.set("v", "<C-v>", '"+p', { noremap = true })
 -- t=Telescope
-vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>")
+vim.keymap.set("n", "<space>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
 -- 可视模式下使用 Tab/Shift-Tab 缩进
 vim.keymap.set("v", "<Tab>", ">gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = true, silent = true })

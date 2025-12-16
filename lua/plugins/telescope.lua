@@ -1,7 +1,114 @@
+-- return {
+-- 	"nvim-telescope/telescope-file-browser.nvim",
+-- 	dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+-- 	config = function()
+-- 		require("telescope").setup({
+-- 			defaults = {
+-- 				-- 基础美化设置
+-- 				prompt_prefix = "  ",
+-- 				selection_caret = " ",
+-- 				-- path_display = { "smart" },
+-- 				entry_prefix = "  ",
+-- 				initial_mode = "insert",
+-- 				selection_strategy = "reset",
+-- 				sorting_strategy = "ascending",
+-- 				layout_strategy = "horizontal",
+-- 				layout_config = {
+-- 					horizontal = {
+-- 						prompt_position = "top",
+-- 						preview_width = 0.55,
+-- 						results_width = 0.8,
+-- 					},
+-- 					vertical = {
+-- 						mirror = false,
+-- 					},
+-- 					width = 0.87,
+-- 					height = 0.80,
+-- 					preview_cutoff = 120,
+-- 				},
+--
+-- 				-- 文件图标设置
+-- 				file_ignore_patterns = { "node_modules", ".git" },
+-- 				path_display = { "truncate" },
+-- 				winblend = 0,
+-- 				border = {},
+-- 				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+-- 				color_devicons = true,
+--
+-- 				-- 高亮设置
+-- 				set_env = { ["COLORTERM"] = "truecolor" }, -- 支持真彩色
+-- 				use_less = true,
+-- 				-- 文件预览美化
+-- 				file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+-- 				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+-- 				qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+-- 			},
+-- 			-- pickers = {
+-- 			-- 	find_files = {
+-- 			-- 		theme = "dropdown",
+-- 			-- 		hidden = true,
+-- 			-- 	},
+-- 			-- 	live_grep = {
+-- 			-- 		theme = "dropdown",
+-- 			-- 	},
+-- 			-- 	buffers = {
+-- 			-- 		theme = "dropdown",
+-- 			-- 		previewer = false,
+-- 			-- 		initial_mode = "normal",
+-- 			-- 	},
+-- 			-- },
+--
+-- 			extensions = {
+-- 				file_browser = {
+-- 					-- 美化设置
+-- 					grouped = true, -- 分组显示
+-- 					hide_parent_dir = false, -- 显示父目录
+-- 					respect_gitignore = true, -- 尊重 .gitignore
+-- 					hidden = { file_browser = false, folder_browser = false }, -- 隐藏文件
+--
+-- 					-- 布局和显示
+-- 					initial_mode = "normal",
+-- 					layout_config = {
+-- 						height = 0.95,
+-- 						width = 0.95,
+-- 						prompt_position = "top",
+-- 						preview_cutoff = 1,
+-- 					},
+--
+-- 					-- 图标支持
+-- 					git_status = true, -- 显示 git 状态
+-- 				},
+-- 			},
+-- 		})
+-- 		-- To get telescope-file-browser loaded and working with telescope,
+-- 		-- you need to call load_extension, somewhere after setup function:
+-- 		require("telescope").load_extension("file_browser")
+-- 	end,
+-- }
 return {
-	"nvim-telescope/telescope-file-browser.nvim",
-	dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	"simonmclean/triptych.nvim",
+	dependencies = {
+		"nvim-lua/plenary.nvim", -- required
+		"nvim-tree/nvim-web-devicons", -- optional for icons
+		"antosha417/nvim-lsp-file-operations", -- optional LSP integration
+	},
+	opts = {}, -- config options here
+	keys = {
+		{ "<leader>-", ":Triptych<CR>" },
+	},
 }
+-- return {
+--   "kelly-lin/ranger.nvim",
+--   config = function()
+--     require("ranger-nvim").setup({ replace_netrw = true })
+--     vim.api.nvim_set_keymap("n", "<leader>ef", "", {
+--       noremap = true,
+--       callback = function()
+--         require("ranger-nvim").open(true)
+--       end,
+--     })
+--   end,
+-- }
 -- TODO:快捷键类型
 -- 插入模式 ("i")：
 -- <A-c>：创建新文件。
