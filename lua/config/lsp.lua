@@ -5,6 +5,7 @@ vim.diagnostic.config({
 	float = { border = "rounded", source = "if_many" },
 	underline = { severity = vim.diagnostic.severity.ERROR },
 	signs = {
+		severity = { min = vim.diagnostic.severity.ERROR }, -- 这里配置只显示的诊断级别
 		text = {
 			[vim.diagnostic.severity.ERROR] = " ", -- 这里配置“错误”的图标，需要nerd font字体
 			[vim.diagnostic.severity.WARN] = " ",
@@ -16,6 +17,7 @@ vim.diagnostic.config({
 	virtual_text = {
 		source = "if_many",
 		spacing = 2,
+		severity = vim.diagnostic.severity.ERROR, -- 这里配置只显示的诊断级别
 		prefix = "●",
 		format = function(diagnostic)
 			local diagnostic_message = {
