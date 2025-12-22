@@ -11,10 +11,10 @@ return {
 			-- ===========================
 			cmdline = {
 				enabled = true,
-				view = "cmdline_popup",
+				view = "cmdline",
 				opts = {},
 				format = {
-					cmdline = { pattern = "^:", icon = "", lang = "vim" },
+					cmdline = { pattern = "^:", icon = " ", lang = "vim" },
 					search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
 					search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
 					filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },

@@ -50,5 +50,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		require("conform").format({ bufnr = args.buf })
 	end,
 })
--- -- 自定义 NotifyBackground 高亮组
--- vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "#000000", fg = "#FFFFFF" })

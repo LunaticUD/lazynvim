@@ -45,10 +45,13 @@ return {
 		completion = {
 			list = { selection = { preselect = false } },
 			-- documentation = { auto_show = true },
+			ghost_text = { enabled = true },
+
 			documentation = {
+				-- enabled = true,
 				auto_show = true,
 				-- Delay before showing the documentation window
-				auto_show_delay_ms = 200,
+				auto_show_delay_ms = 800,
 				window = {
 					min_width = 10,
 					max_width = 120,
@@ -88,7 +91,9 @@ return {
 		-- 	enabled = true,
 		-- },
 		signature = {
-			enabled = true,
+			-- enabled = false,
+			auto_show = true,
+			auto_show_delay_ms = 800,
 			window = {
 				min_width = 1,
 				max_width = 100,
@@ -103,7 +108,7 @@ return {
 				direction_priority = { "n" },
 				-- Disable if you run into performance issues
 				treesitter_highlighting = true,
-				show_documentation = true,
+				show_documentation = false,
 			},
 		},
 		cmdline = {
